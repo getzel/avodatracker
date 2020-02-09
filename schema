@@ -1,0 +1,21 @@
+//Pseudo code
+Users
+- ID (AI)
+- login
+- pass
+
+Tasks
+- ID (AI)
+- label
+- hide_label (bool)
+- descr
+- type (daily/weekly/monthly/yearly/other)
+- private_task (user_ID) 
+
+
+Log
+- ID (AI)
+- task_ID
+- user_ID
+- success (bool)
+- timestamp
