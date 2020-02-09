@@ -20,6 +20,6 @@ ________________________________________________________________
 
 Initial Deliverables
 
-DB Schema
-Functional Code
-Responsive Cool Design
+- DB Schema
+- Functional Code
+- Responsive Cool Design
