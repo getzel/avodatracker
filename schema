@@ -4,7 +4,7 @@ Users
 - login
 - pass
 
-CREATE TABLE `bvk`.`new_table` (
+CREATE TABLE `avodatrack`.`users` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `login` VARCHAR(45) NULL,
   `pass` VARCHAR(45) NULL,
@@ -19,7 +19,7 @@ Tasks
 - type (daily/weekly/monthly/yearly/other)
 - private_task (user_ID) 
 
-CREATE TABLE `bvk`.`new_table` (
+CREATE TABLE `avodatrack`.`tasks` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `label` VARCHAR(150) NULL,
   `hide_label` TINYINT NULL,
@@ -35,7 +35,7 @@ Log
 - success (bool)
 - timestamp
 
-CREATE TABLE `bvk`.`new_table` (
+CREATE TABLE `avodatrack`.`task_log` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `task_ID` INT NULL,
   `user_ID` INT NULL,
