@@ -4,6 +4,13 @@ Users
 - login
 - pass
 
+CREATE TABLE `bvk`.`new_table` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `login` VARCHAR(45) NULL,
+  `pass` VARCHAR(45) NULL,
+  PRIMARY KEY (`ID`));
+
+
 Tasks
 - ID (AI)
 - label
@@ -12,6 +19,14 @@ Tasks
 - type (daily/weekly/monthly/yearly/other)
 - private_task (user_ID) 
 
+CREATE TABLE `bvk`.`new_table` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `label` VARCHAR(150) NULL,
+  `hide_label` TINYINT NULL,
+  `descr` VARCHAR(250) NULL,
+  `type` VARCHAR(6) NULL,
+  `private_task` INT NULL,
+  PRIMARY KEY (`ID`));
 
 Log
 - ID (AI)
@@ -19,3 +34,11 @@ Log
 - user_ID
 - success (bool)
 - timestamp
+
+CREATE TABLE `bvk`.`new_table` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `task_ID` INT NULL,
+  `user_ID` INT NULL,
+  `success` TINYINT NULL,
+  `timestamp` INT NULL,
+  PRIMARY KEY (`ID`));
