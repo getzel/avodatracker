@@ -16,7 +16,9 @@ Tasks
 - label
 - hide_label (bool)
 - descr
-- type (daily/weekly/monthly/yearly/other)
+- schedule (daily/weekly/monthly/yearly/other)
+- metric (=/</>)
+- bar  (this plus metric should compare with a log to indicate success)
 - private_task (user_ID) 
 
 CREATE TABLE `avodatrack`.`tasks` (
@@ -24,7 +26,9 @@ CREATE TABLE `avodatrack`.`tasks` (
   `label` VARCHAR(150) NULL,
   `hide_label` TINYINT NULL,
   `descr` VARCHAR(250) NULL,
-  `type` VARCHAR(6) NULL,
+  `schedule` VARCHAR(6) NULL,
+  `metric` VARCHAR(45) NULL,
+  `bar` VARCHAR(45) NULL,
   `private_task` INT NULL,
   PRIMARY KEY (`ID`));
 
@@ -33,6 +37,7 @@ Log
 - task_ID
 - user_ID
 - success (bool)
+- entry (specific logged value)
 - timestamp
 
 CREATE TABLE `avodatrack`.`task_log` (
@@ -40,5 +45,6 @@ CREATE TABLE `avodatrack`.`task_log` (
   `task_ID` INT NULL,
   `user_ID` INT NULL,
   `success` TINYINT NULL,
+  `entry` VARCHAR(45) NULL,
   `timestamp` INT NULL,
   PRIMARY KEY (`ID`));
