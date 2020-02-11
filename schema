@@ -17,9 +17,18 @@ Tasks
 - hide_label (bool)
 - descr
 - schedule (daily/weekly/monthly/yearly/other)
-- metric (=/</>)
+- metric (E/=/</>)
 - bar  (this plus metric should compare with a log to indicate success)
 - private_task (user_ID) 
+
+Example Usage
+Chitas Daily: schedule = daily, metric = E
+Chesbon HaNefesh Monthly: schedule = monthly, metric = E
+Sleeping On Time: schedule = daily, metric = <, bar = 10
+
+Logging streak indicates if there is an entry for each schedule unit (daily/monthly/etc)
+Success streak indicates number of uninterrupted logs for which `entry` meets success criteria
+
 
 CREATE TABLE `avodatrack`.`tasks` (
   `ID` INT NOT NULL AUTO_INCREMENT,
