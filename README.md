@@ -5,7 +5,7 @@ Implementatiom will be phased so as not to drown in scope creep.
 
 
 Most basic implementation will require users, tasks, and successes (indications that a task has been fulfilled.)
-The UI would upon login, display the lists of tasks (with CRUD capability) and a streak - the number of uninterrupted success, calculated weekly,daily,or mothly, as a task requires. (Non scheduled tasks can possibly also include 'failures' so that streaks can be calculated,
+The UI would upon login, display the lists of tasks (with CRUD capability) and a streak - the number of uninterrupted successes, calculated weekly,daily,or mothly, as a task requires. (Non scheduled tasks can possibly also include 'failures' so that streaks can be calculated,
 
 Future enhancement can include
 - Badges for various acheivements (A cool idea might be a physical chip with a QR code to prove it is still valid for 30-day streaks, 6-month streaks, etc)
