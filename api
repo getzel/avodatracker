@@ -1,1 +1,19 @@
 //List User's Tasks, with Streaks
+SELECT * FROM users_tasks
+JOIN tasks ON tasks.ID = task_ID
+WHERE user_ID = :user_ID
+
+Figuring out streaks is Tricky! Here's one attempt at the daily schedule type. The idea is: 
+- Order by timestamp desc
+- calculate how many days ago that stamp is
+- generate a row number for each row
+- return the first row number which does NOT match the days ago and Voila. In theory. 
+NOTE: logs for the future should be blocked, obv.
+
+(Haven't set up a populated db so I can't test this yet)
+
+SET @row_number = 0; -- MySQL < 8 doesn't have row_number()
+SELECT(@row_number:=@row_number + 1) AS `row_num`, datediff(NOW(),FROM_UNIXTIME(log_date)) days_ago FROM avoda_track.task_log
+WHERE task_ID = :task_ID
+AND @row_number <> datediff(NOW(),FROM_UNIXTIME(log_date))
+ORDER BY `log_date` DESC LIMIT 0,1
