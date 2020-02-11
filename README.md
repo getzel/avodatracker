@@ -9,6 +9,7 @@ The UI would upon login, display the lists of tasks (with CRUD capability) and a
 
 Future enhancement can include
 - Badges for various acheivements (A cool idea might be a physical chip with a QR code to prove it is still valid for 30-day streaks, 6-month streaks, etc)
+- UI for more sophisticated success metrics (see schema) 
 - Task Analytics, going beyond streaks to show percentages, patterns of when failure happens etc
 - prepared tasks from which to choose, perhaps grouped together (sequentially or non) by overarching goal
 - Inter-user links such as Chavrusas and groups
