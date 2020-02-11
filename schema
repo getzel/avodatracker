@@ -56,7 +56,7 @@ Log
 - user_ID
 - success (bool)
 - entry (specific logged value)
-- timestamp
+- log_date (timestamp)
 
 CREATE TABLE `avodatrack`.`task_log` (
   `ID` INT NOT NULL AUTO_INCREMENT,
@@ -64,5 +64,5 @@ CREATE TABLE `avodatrack`.`task_log` (
   `user_ID` INT NULL,
   `success` TINYINT NULL,
   `entry` VARCHAR(45) NULL,
-  `timestamp` INT NULL,
+  `log_date` INT NULL,
   PRIMARY KEY (`ID`));
