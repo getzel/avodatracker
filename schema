@@ -43,6 +43,13 @@ CREATE TABLE `avodatrack`.`tasks` (
   `private_task` INT NULL,
   PRIMARY KEY (`ID`));
 
+User/Tasks Relationship table
+CREATE TABLE `avodatrack`.`users_tasks` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `task_ID` INT NULL,
+  `task_ID` INT NULL,
+  PRIMARY KEY (`ID`));
+
 Log
 - ID (AI)
 - task_ID
