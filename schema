@@ -17,7 +17,7 @@ Tasks
 - hide_label (bool)
 - descr
 - schedule (daily/weekly/monthly/yearly/other)
-- metric (E/=/</>)
+- metric (E[xists]/=/</>)
 - bar  (this plus metric should compare with a log to indicate success)
 - private_task (user_ID) 
 
