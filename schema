@@ -16,6 +16,7 @@ Tasks
 - label
 - hide_label (bool)
 - descr
+- freq (how many entries per schedule)
 - schedule (daily/weekly/monthly/yearly/other)
 - metric (E[xists]/=/</>)
 - bar  (this plus metric should compare with a log to indicate success)
@@ -36,6 +37,7 @@ CREATE TABLE `avodatrack`.`tasks` (
   `label` VARCHAR(150) NULL,
   `hide_label` TINYINT NULL,
   `descr` VARCHAR(250) NULL,
+  `freq` TINYINT NULL,
   `schedule` VARCHAR(6) NULL,
   `metric` VARCHAR(45) NULL,
   `bar` VARCHAR(45) NULL,
@@ -43,6 +45,14 @@ CREATE TABLE `avodatrack`.`tasks` (
   `private_task` INT NULL,
   PRIMARY KEY (`ID`));
 
+Schedule
+Used to validate log entries for a task. 
+CREATE TABLE `avodatrack`.`schedule` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+   `task_ID` INT NULL,
+   `pattern` VARCHAR(250) NULL, -- serialize pattern?
+  PRIMARY KEY (`ID`));
+  
 User/Tasks Relationship table
 CREATE TABLE `avodatrack`.`users_tasks` (
   `ID` INT NOT NULL AUTO_INCREMENT,
