@@ -20,6 +20,7 @@ Tasks
 - schedule (daily/weekly/monthly/yearly/other)
 - metric (E[xists]/=/</>)
 - bar  (this plus metric should compare with a log to indicate success)
+- ceiling  (upper bound for success)
 - metric_label
 - private_task (user_ID) 
 
@@ -42,6 +43,7 @@ CREATE TABLE `avodatrack`.`tasks` (
   `schedule` VARCHAR(6) NULL,
   `metric` VARCHAR(45) NULL,
   `bar` VARCHAR(45) NULL,
+  `ceiling` VARCHAR(45) NULL,
   `metric_label` VARCHAR(45) NULL,
   `private_task` INT NULL,
   PRIMARY KEY (`ID`));
