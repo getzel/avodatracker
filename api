@@ -17,3 +17,6 @@ SELECT(@row_number:=@row_number + 1) AS `row_num`, datediff(NOW(),FROM_UNIXTIME(
 WHERE task_ID = :task_ID
 AND @row_number <> datediff(NOW(),FROM_UNIXTIME(log_date))
 ORDER BY `log_date` DESC LIMIT 0,1
+
+Note: instead of dynamic calculation we can calculate on log entry and save streak number and date calculated and then show 0 if the date
+is more than one day ago.
