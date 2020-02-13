@@ -19,6 +19,7 @@ Future enhancement can include
 - Group Medals indicated participation in a group who has acheived a certain status - Chitas Group, 3 Prakim Group, Smartphone-free Group.
 - A Mashpia user who can oversee and perhaps override or add limitations to the user
 - Printed notebooks generator (once this thing has more form) for offline use
+- Emergency kits of video or text based thoughts in case of emergency (possibly text for response) - I'm struggling with X. How do I think/realize my way out?
 
 ________________________________________________________________
 
