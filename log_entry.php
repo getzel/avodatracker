@@ -1,11 +1,7 @@
 <?php 
-	function jewishdate($ts){
-		$d = gregoriantojd(date('n',$ts),date('j',$ts),date('Y',$ts)); 
-        $m = jdmonthname($d,4);
-        $d = explode('/',jdtojewish($d)); 
-        return "{$d[1]} $m {$d[2]}";
-	}
-	?>
+	require 'inc/base.php';
+	require 'inc/conn.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,14 +9,7 @@
 </head>
 <body>
 	<?php 
-		error_reporting(E_ALL);
 		try{
-			$conn = new PDO("mysql:host=localhost;dbname=avoda;charset=utf8mb4", 'avoda_db', 'y}jh!u]wLx&+', [
-				    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-				    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-				    PDO::ATTR_EMULATE_PREPARES   => false]);
-				    //once tzs are loaded , PDO::MYSQL_ATTR_INIT_COMMAND => "SET time_zone = 'UTC'"
-			
 			if($_REQUEST['entry']=='on'){
  				$entry = $conn->prepare('INSERT INTO `task_log` (`task_ID`, `user_ID`, `success`, `log_date`) VALUES (:task, 1,1,:date)');
 			    if($entry->execute(['task' => $_REQUEST['task'],'date' => $_REQUEST['date']])){

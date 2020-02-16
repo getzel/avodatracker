@@ -59,8 +59,10 @@ CREATE TABLE `avodatrack`.`schedule` (
 User/Tasks Relationship table
 CREATE TABLE `avodatrack`.`users_tasks` (
   `ID` INT NOT NULL AUTO_INCREMENT,
+  `user_ID` INT NULL,
   `task_ID` INT NULL,
-  `task_ID` INT NULL,
+  `task_start` INT NULL,
+  `task_end` INT NULL,
   PRIMARY KEY (`ID`));
 
 Log
