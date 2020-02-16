@@ -1,5 +1,7 @@
 <?php 
-define('DB_HOST', 'localhost');
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+//define('DB_HOST', 'localhost');
+define('DB_HOST', '192.186.240.201');
 define('DB_USER', 'avoda_db');
 define('DB_PASSWORD', 'y}jh!u]wLx&+');
 define('DB_NAME', 'avoda');

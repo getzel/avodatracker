@@ -1,14 +1,4 @@
-<?php 
-	require 'inc/base.php';
-	require 'inc/conn.php';
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>AvodaTracker 0.1</title>
-</head>
-<body>
-	<?php 
+<?php require 'inc/header.php';	
 		try{
 			if($_REQUEST['entry']=='on'){
  				$entry = $conn->prepare('INSERT INTO `task_log` (`task_ID`, `user_ID`, `success`, `log_date`) VALUES (:task, 1,1,:date)');
@@ -35,5 +25,4 @@
 		     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 		}
 	?>
-</body>
-
+<?php require 'inc/footer.php';	

@@ -1,14 +1,6 @@
-<?php 
-	require 'inc/base.php';
-	require 'inc/conn.php';
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>AvodaTracker 0.1</title>
-</head>
-<body>
-	<h1>Tasks</h2>
+<?php require 'inc/header.php';?>
+		<h1>My Tasks</h1>
+		<ol id="my_tasks">
 	<?php 
         $tasks = $conn->query('SELECT *,(SELECT MAX(days_ago) FROM task_log
 										WHERE user_ID = 1 AND task_ID = t.ID
@@ -25,12 +17,14 @@
                         $days[strtotime('midnight',$log['log_date'])] +=1; 
                 }
 
-			    echo "<h2>{$task['label']}</h2>
-			    <p>{$task['descr']}</p>
-			    <dl>
-			        <dt>Logging Streak:</dt><dd>".((int)$task['success'])."<dd>
-			        <dt>Success Streak:</dt><dd>".((int)$task['success'])."<dd>
-			    </dl>
+			    echo "<li>
+			    		<section>
+			    		<h2>{$task['label']}</h2>
+					    <p>{$task['descr']}</p>
+					    <dl>
+					        <dt>Logging Streak:</dt><dd>".((int)$task['success'])."<dd>
+					        <dt>Success Streak:</dt><dd>".((int)$task['success'])."<dd>
+					    </dl>
 			    <a href='#'>Task Analytics</a>
 			    
 			    <table>
@@ -47,10 +41,13 @@
 	                        array_unshift($data,(int)$days[$i]);
 
                         }
-			    echo '</table>';
+			    echo '</table>';?>
+				</section>
+			    <div class="container" style="width:50%;margin:50px auto;"></div>
+			    </li> <?php
 			}
 		?>
-		<div class="container" style="width:50%;margin:50px auto;"></div>
+		</ol>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2/dist/Chart.min.js"></script>
 		<script>
 		window.onload = function() {
@@ -94,6 +91,4 @@
 			});
 		};
 		</script>
-</body>
-</html>
-
+<?php require 'inc/footer.php';	
