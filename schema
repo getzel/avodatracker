@@ -80,4 +80,13 @@ CREATE TABLE `avodatrack`.`task_log` (
   `success` TINYINT NULL,
   `entry` VARCHAR(45) NULL,
   `log_date` INT NULL,
-  PRIMARY KEY (`ID`));
+  `note` TEXT NULL,
+  `days_ago` INT NULL,
+  `row_num` INT NULL,
+ PRIMARY KEY (`ID`));
+
+CREATE TABLE `avodatrack`.`task_resource` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `task_ID` INT NULL,
+  `resource` ?,
+PRIMARY KEY (`ID`));  

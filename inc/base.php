@@ -6,6 +6,7 @@ define('DB_USER', 'avoda_db');
 define('DB_PASSWORD', 'y}jh!u]wLx&+');
 define('DB_NAME', 'avoda');
 
+$sched_opts = ['daily','weekly','monthly','yearly'];//Irregularly
 function jewishdate($ts){
 	$d = gregoriantojd(date('n',$ts),date('j',$ts),date('Y',$ts)); 
     $m = jdmonthname($d,4);

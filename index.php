@@ -14,9 +14,8 @@
         		     throw new \PDOException($e->getMessage(), (int)$e->getCode());
         		}
                 while($log = $logs->fetch()){
-                        $days[strtotime('midnight',$log['log_date'])] +=1; 
+                    $days[strtotime('midnight',$log['log_date'])] +=1; 
                 }
-
 			    echo "<li>
 			    		<section>
 			    		<h2>{$task['label']}</h2>
